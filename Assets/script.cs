@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class script : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] float x;
+
     void Start()
     {
         
@@ -13,6 +15,7 @@ public class script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move
         
     }
 }
