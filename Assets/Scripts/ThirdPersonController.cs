@@ -75,6 +75,14 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Header("Pick Up")]
+        [Tooltip("If you press E to grab item")]
+        public float DetectionDistance = 2.0f;
+        public float DetectionRadius = 1.0f;
+        public LayerMask PickUpLayer;
+        GameObject PickUpTarget;
+
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -95,6 +103,7 @@ namespace StarterAssets
         private int _animIDSpeed;
         private int _animIDGrounded;
         private int _animIDJump;
+        private int _animIDPickUp;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
@@ -159,6 +168,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            GrabItem();
         }
 
         private void LateUpdate()
@@ -171,6 +181,7 @@ namespace StarterAssets
             _animIDSpeed = Animator.StringToHash("Speed");
             _animIDGrounded = Animator.StringToHash("Grounded");
             _animIDJump = Animator.StringToHash("Jump");
+            _animIDPickUp = Animator.StringToHash("PickUp");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
         }
@@ -386,6 +397,48 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+            }
+        }
+
+        private void OnPickUpEvent(AnimationEvent animationEvent)
+        {
+            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            {
+                // Do stuff with pick up
+                print("Coucou je suis un pick up heureux : "+(PickUpTarget == null ? "Rien" : PickUpTarget.gameObject.name));
+                // Stop animation
+                _animator.SetBool(_animIDPickUp, false);
+
+                // Reset pick up target
+                PickUpTarget = null;
+            }
+        }
+
+        private void GrabItem() 
+        {
+            if (_input.grabItem) 
+            {
+                print("Toto");
+                //détecter l'objet à ramsser
+                Vector3 startCapsule = transform.position + Vector3.up;
+                Vector3 endCapsule = startCapsule + transform.forward * DetectionDistance;
+                Collider[] colliderInCapsule = Physics.OverlapCapsule(startCapsule, endCapsule, DetectionRadius, PickUpLayer.value);
+                foreach(Collider collider in colliderInCapsule)
+                {
+                    if (collider.CompareTag ("PickUp"))
+                    {
+                        PickUpTarget = collider.gameObject;
+                        break;
+                    }
+                }
+
+                //lancer l'animation ramasser
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDPickUp, true);
+                }
+
+                _input.grabItem = false;
             }
         }
     }
