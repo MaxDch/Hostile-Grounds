@@ -17,8 +17,12 @@ public class ctrlSol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gamemanager.PV = gamemanager.PV - 100;
-        Debug.Log("vie = " + gamemanager.PV.ToString());
-        valeurPV.GetComponent<Text>().text = gamemanager.PV.ToString();
+        
     }
-}
+    /* private void OnTriggerEnter(Collider other)
+    {
+        gamemanager.Health = gamemanager.Health - 100;
+        Debug.Log("vie = " + gamemanager.Health.ToString());
+        valeurPV.GetComponent<Text>().text = gamemanager.Health.ToString();
+    } */
+} 

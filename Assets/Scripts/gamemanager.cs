@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class gamemanager : MonoBehaviour
 {
-    public static int PV;
+    public static int Health = 100;
 
     // Start is called before the first frame update
     void Start()

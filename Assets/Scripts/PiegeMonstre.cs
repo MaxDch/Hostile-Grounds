@@ -1,34 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PiegeMonstre : MonoBehaviour
 {
-    public float mytimer;
+    public float TimerPiege;
     public GameObject ZonePiege;
     public GameObject FxOnActif;
-    // Start is called before the first frame update
+    
+
+    // Dégâts de Zone toutes les 10 secondes
     void Start()
     {
+        TimerPiege = 0;
         ZonePiege.SetActive(false);
         FxOnActif.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        mytimer = mytimer + Time.deltaTime; // timer en seconde 
-        if (mytimer >= 20.00 && mytimer <= 22) ;
+        TimerPiege = TimerPiege + Time.deltaTime; // timer en seconde 
+        if (TimerPiege >= 5.00 && TimerPiege <= 10.0)
         {
-            Debug.Log("20s sont passer attention");
+            Debug.Log("Le piège s'active");
             ZonePiege.SetActive(true);
             FxOnActif.SetActive(true);
         }
-        if (mytimer >= 22) ;
+        if (TimerPiege >= 10.0)
         {
-            mytimer = 0;
+            TimerPiege = 0;
             ZonePiege.SetActive(false);
             FxOnActif.SetActive(false);
-        }
+        } 
     }
+
+    
+
 }

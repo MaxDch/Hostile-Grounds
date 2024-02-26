@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        gamemanager.PV = 100;
+        gamemanager.Health = 100;
     }
 
 
