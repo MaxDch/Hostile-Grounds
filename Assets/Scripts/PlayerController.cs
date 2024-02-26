@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
     CharacterController cc;
     const float GRAVITY = 9.81f;
     float velocityY;
+    public GameObject valeurPv;
     [SerializeField] bool grounded;
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        gamemanager.PV = 100;
     }
+
+
 
     // Update is called once per frame
     void Update()

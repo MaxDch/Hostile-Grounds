@@ -18,13 +18,13 @@ public class PiegeMonstre : MonoBehaviour
     void Update()
     {
         mytimer = mytimer + Time.deltaTime; // timer en seconde 
-        if (mytimer >= 10.00 && mytimer <= 12) ;
+        if (mytimer >= 20.00 && mytimer <= 22) ;
         {
-            Debug.Log("10s sont passer attention");
+            Debug.Log("20s sont passer attention");
             ZonePiege.SetActive(true);
             FxOnActif.SetActive(true);
         }
-        if (mytimer >= 12) ;
+        if (mytimer >= 22) ;
         {
             mytimer = 0;
             ZonePiege.SetActive(false);
