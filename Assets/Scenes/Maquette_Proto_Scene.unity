@@ -4876,9 +4876,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328642281}
+  - component: {fileID: 328642282}
+  - component: {fileID: 328642283}
   m_Layer: 0
-  m_Name: GameObject mostreBody (4)
-  m_TagString: Untagged
+  m_Name: BossBouclier1
+  m_TagString: ShieldBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4934,6 +4936,39 @@ Transform:
   - {fileID: 1727679456}
   m_Father: {fileID: 715011896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328642282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328642280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8135f161e12124d4cba8c5fcd5721092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &328642283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328642280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.392353, y: 3.6403542, z: 26.865578}
+  m_Center: {x: 0, y: -1.3201772, z: 0}
 --- !u!1 &341986913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,6 +5152,11 @@ PrefabInstance:
       propertyPath: SprintSpeed
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 9139224166329818089, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
+      propertyPath: BouclierBoss
+      value: 
+      objectReference: {fileID: 328642281}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6108,7 +6148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412252110}
   m_Layer: 0
-  m_Name: GameObject mostreBody (6)
+  m_Name: BossBouclier3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8310,11 +8350,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 128
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &553082164
@@ -29456,7 +29496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990718133}
   m_Layer: 0
-  m_Name: GameObject mostreBody (5)
+  m_Name: BossBouclier2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
