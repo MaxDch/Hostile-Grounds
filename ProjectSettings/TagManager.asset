@@ -6,6 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - PickUp
+  - Projectile
+  - FxTemporaire
+  - Lava
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - Water
   - UI
   - PickUp
-  - 
+  - Player
   - 
   - 
   - 
