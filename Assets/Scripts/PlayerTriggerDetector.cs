@@ -22,16 +22,17 @@ public class PlayerTriggerDetector : MonoBehaviour
         }
         if (other.CompareTag("ShieldBoss"))
         {
+            print("J'approche du bouclier");
             if (BouclierBoss)
             {
                 Vector3 Bouclier = BouclierBoss.transform.position - transform.position;
                 float sqrLen = Bouclier.sqrMagnitude;
-                if (sqrLen < DistanceBetweenPlayer * DistanceBetweenPlayer)
+                if (sqrLen <= DistanceBetweenPlayer * DistanceBetweenPlayer)
                 {
                     gamemanager.Health = gamemanager.Health - 10;
                     GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
-
-                    print("J'approche du bouclier");
+                    print("Je prends des dégâts");
+                    
                 }
 
             }

@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - Lava
   - ShieldBoss
+  - PlayerHealth
   layers:
   - Default
   - TransparentFX
