@@ -43854,8 +43854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8be2c1670aa9654aa2aed2181380549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 4705093386931117623, guid: 72fd3eeb1a39d0a489b4533618b1ff6a,
+  Projectile: {fileID: 4705093386931117623, guid: 56023f023c66fdb4fb9caef9b34db041,
     type: 3}
+  Boss: {fileID: 1627536828}
   Timer: 0
   ZoneEnvoiProjectile: {fileID: 1403749875}
 --- !u!65 &1627536831

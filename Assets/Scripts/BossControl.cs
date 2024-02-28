@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossControl : MonoBehaviour
 {
     bool IsPlayerInRange;
     public GameObject Projectile;
     GameObject Player;
+    public GameObject Boss;
     public float Timer;
     public GameObject ZoneEnvoiProjectile;
+    UIManager uIManager;
+
+    float currentDistance;
+    float AttackZone;
     void Start()
     {
+        uIManager = FindObjectOfType<UIManager>();
+        AttackZone = 50.0f;
         Timer = 0;
         foreach (var charController in FindObjectsOfType<CharacterController>())
         {
@@ -25,29 +33,28 @@ public class BossControl : MonoBehaviour
     
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
+        currentDistance = Vector3.Distance (Boss.transform.position, Player.transform.position);
         Timer = Timer + Time.deltaTime;
-        if(Timer > 5.0f && IsPlayerInRange)
-        {
-
-            GameObject BouletPilier = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
-            ZoneEnvoiProjectile.transform.LookAt(Player.transform.position + Vector3.up * 1.5f);
-            BouletPilier.GetComponent<Rigidbody>().AddForce(ZoneEnvoiProjectile.transform.forward * 0.5f, ForceMode.VelocityChange);
-            Timer = 0;
-
-        }
+        int[] StockAmmos = new int[10];
         
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player")) 
-        { 
-            IsPlayerInRange = true;
-            Timer = 0;
+        if(currentDistance <= AttackZone) 
+        {
+            
+            if (Timer >= 10.0f) 
+            {
+                
+                GameObject BouletPilier = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
+                foreach (int i in StockAmmos)
+                { StockAmmos[i] = i - 1; }
+                Timer = 0;
+
+
+            }
+            
 
         }
     }
+    
+
+
 }
