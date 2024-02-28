@@ -32,6 +32,7 @@ public class PiegeMonstre : MonoBehaviour
             if (FxOnActif != null)
             {
                 FxOnActif.SetActive(true);
+                
             }
         }
         if (TimerPiege >= 10.0)

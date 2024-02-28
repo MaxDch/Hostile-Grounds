@@ -38,18 +38,19 @@ public class BossControl : MonoBehaviour
     private void FixedUpdate()
     {
         currentDistance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-        Timer = Timer + Time.deltaTime;
+        
         int[] StockAmmos = new int[10];
 
         if (currentDistance <= AttackZone)
         {
+            Timer = Timer + Time.deltaTime;
 
             if (Timer >= 2.0f)
             {
 
                 GameObject BouletBoss = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
-                BouletBoss.GetComponent<Rigidbody>().AddForce(ZoneEnvoiProjectile.transform.forward * 5.0f, ForceMode.Impulse);
-                ZoneEnvoiProjectile.transform.LookAt(Player.transform.position + Vector3.up * 2.0f);
+                BouletBoss.GetComponent<Rigidbody>().AddForce(ZoneEnvoiProjectile.transform.forward * 10.0f, ForceMode.Force);
+                ZoneEnvoiProjectile.transform.LookAt(Player.transform);
                 foreach (int i in StockAmmos)
                 { StockAmmos[i] = i - 1; }
                 

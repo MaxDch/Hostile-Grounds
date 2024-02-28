@@ -15,11 +15,13 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     Transform Target;
     void Start()
     {
-        Player = Player = GameObject.FindWithTag("Player");
-        Speed_boulet = 5.0f;
-        Target = Player.transform;
-        Target.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
+        Player = GameObject.Find("Joueur");
+        
+        Speed_boulet = 5.0f;
+        Target = Player.transform; 
+        Target.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
+        
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Timer = Timer + Time.deltaTime;
+        
 
         gameObject.transform.LookAt(Player.transform.position + Vector3.up * 2.0f);
         var move = Speed_boulet * Time.deltaTime;
@@ -46,15 +48,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
         Destroy(gameObject, 20.0f);
     }
     
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            IsPlayerInRange = false;
-            Timer = 0;
-
-        }
-    }
+   
     private void OnCollisionEnter(Collision collision)
     {
 
