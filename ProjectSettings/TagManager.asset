@@ -11,6 +11,7 @@ TagManager:
   - Lava
   - ShieldBoss
   - PlayerHealth
+  - BossHeart
   layers:
   - Default
   - TransparentFX

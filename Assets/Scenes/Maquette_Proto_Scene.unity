@@ -3710,7 +3710,7 @@ PrefabInstance:
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
       propertyPath: SprintSpeed
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9139224166329818089, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
@@ -11346,9 +11346,10 @@ GameObject:
   - component: {fileID: 622233568}
   - component: {fileID: 622233567}
   - component: {fileID: 622233566}
+  - component: {fileID: 622233569}
   m_Layer: 0
   m_Name: Sphere (38)
-  m_TagString: Untagged
+  m_TagString: BossHeart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11439,6 +11440,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622233564}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &622233569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622233564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5968967c6a99fa4fa1832c3f06f457c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1 &629812228
 GameObject:
   m_ObjectHideFlags: 0
@@ -42988,9 +43002,10 @@ GameObject:
   - component: {fileID: 1526812509}
   - component: {fileID: 1526812508}
   - component: {fileID: 1526812507}
+  - component: {fileID: 1526812510}
   m_Layer: 0
   m_Name: Sphere (39)
-  m_TagString: Untagged
+  m_TagString: BossHeart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43081,6 +43096,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526812505}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1526812510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526812505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5968967c6a99fa4fa1832c3f06f457c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1 &1539624615
 GameObject:
   m_ObjectHideFlags: 0
@@ -45055,9 +45083,10 @@ GameObject:
   - component: {fileID: 1752398173}
   - component: {fileID: 1752398172}
   - component: {fileID: 1752398171}
+  - component: {fileID: 1752398174}
   m_Layer: 0
   m_Name: Sphere (37)
-  m_TagString: Untagged
+  m_TagString: BossHeart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45148,6 +45177,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752398169}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1752398174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752398169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5968967c6a99fa4fa1832c3f06f457c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!1 &1753823978
 GameObject:
   m_ObjectHideFlags: 0

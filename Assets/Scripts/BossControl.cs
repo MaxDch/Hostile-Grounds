@@ -18,7 +18,7 @@ public class BossControl : MonoBehaviour
     void Start()
     {
         uIManager = FindObjectOfType<UIManager>();
-        AttackZone = 50.0f;
+        AttackZone = 30.0f;
         Timer = 0;
         foreach (var charController in FindObjectsOfType<CharacterController>())
         {
@@ -33,28 +33,35 @@ public class BossControl : MonoBehaviour
     
     void Update()
     {
-        currentDistance = Vector3.Distance (Boss.transform.position, Player.transform.position);
+        
+    }
+    private void FixedUpdate()
+    {
+        currentDistance = Vector3.Distance(Boss.transform.position, Player.transform.position);
         Timer = Timer + Time.deltaTime;
         int[] StockAmmos = new int[10];
-        
-        if(currentDistance <= AttackZone) 
+
+        if (currentDistance <= AttackZone)
         {
-            
-            if (Timer >= 10.0f) 
+
+            if (Timer >= 2.0f)
             {
-                
-                GameObject BouletPilier = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
+
+                GameObject BouletBoss = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
+                BouletBoss.GetComponent<Rigidbody>().AddForce(ZoneEnvoiProjectile.transform.forward * 5.0f, ForceMode.Impulse);
+                ZoneEnvoiProjectile.transform.LookAt(Player.transform.position + Vector3.up * 2.0f);
                 foreach (int i in StockAmmos)
                 { StockAmmos[i] = i - 1; }
+                
                 Timer = 0;
 
 
             }
-            
+
 
         }
     }
-    
+
 
 
 }
