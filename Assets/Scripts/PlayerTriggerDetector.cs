@@ -15,12 +15,12 @@ public class PlayerTriggerDetector : MonoBehaviour
             GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
             projectile.Explode();
         }
-        if(other.CompareTag("Lava"))
+        if (other.CompareTag("Lava"))
         {
             gamemanager.Health = gamemanager.Health - 100;
             GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
         }
-        if (other.CompareTag("ShieldBoss"))
+        else if (other.CompareTag("ShieldBoss"))
         {
             print("J'approche du bouclier");
             if (BouclierBoss)
@@ -32,16 +32,28 @@ public class PlayerTriggerDetector : MonoBehaviour
                     gamemanager.Health = gamemanager.Health - 10;
                     GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
                     print("Je prends des dégâts");
-                    
+
                 }
 
             }
-
+        }
+        if (other.TryGetComponent<BossControl>(out var bossControl))
+        {
+            bossControl.SwapBossCameraActivation(true);
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<BossControl>(out var bossControl))
+        {
+            bossControl.SwapBossCameraActivation(false);
+        }
+    }
+    
     private void Update()
     {
-       
+
     }
 
 }

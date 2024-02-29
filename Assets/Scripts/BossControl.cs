@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class BossControl : MonoBehaviour
     public float Timer;
     public GameObject ZoneEnvoiProjectile;
     UIManager uIManager;
+
+    public GameObject bossCamera;
 
     float currentDistance;
     float AttackZone;
@@ -63,6 +66,8 @@ public class BossControl : MonoBehaviour
         }
     }
 
-
-
+    internal void SwapBossCameraActivation(bool b)
+    {
+        bossCamera.SetActive(b);
+    }
 }
