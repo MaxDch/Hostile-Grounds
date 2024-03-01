@@ -45,7 +45,7 @@ public class CtrlShieldBoss : MonoBehaviour
         else
         {
             playerNearSign.SetActive(false);
-            currentDamageCooldown = 0;
+            //currentDamageCooldown = 0;
         }
     }
 

@@ -5,29 +5,49 @@ using UnityEngine.UI;
 
 public class ZonePiegePilier : MonoBehaviour
 {
-    public GameObject PlayerHealth;
-    // Start is called before the first frame update
+    [SerializeField] float attackDelay;
+
+    PlayerTriggerDetector playerTriggerDetector;
+
+    bool isPlayerInTrigger;
+
+    float currentAttackDelay;
+
     void Start()
     {
-        PlayerHealth = GameObject.Find("ValeurHealth");
+        playerTriggerDetector = FindObjectOfType<PlayerTriggerDetector>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(currentAttackDelay <= 0 && isPlayerInTrigger)
+        {
+            bool isDead = playerTriggerDetector.LoseHealth(10);
+            if(isDead)
+            {
+                isPlayerInTrigger = false;
+            }
+            currentAttackDelay = attackDelay;
+        }
+        else if(currentAttackDelay > 0)
+        {
+            currentAttackDelay -= Time.deltaTime;
+        }
     }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("Player"))
         {
-
-            gamemanager.Health = gamemanager.Health - 10;
-            PlayerHealth.GetComponent<Text>().text = gamemanager.Health.ToString();
+            isPlayerInTrigger = true;
+            currentAttackDelay = attackDelay;
         }
+    }
 
-
-
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false;
+        }
     }
 }

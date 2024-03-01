@@ -13,9 +13,12 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     float Speed_boulet;
     GameObject Player;
     Transform Target;
+
+    PlayerTriggerDetector playerTriggerDetector;
+
     void Start()
     {
-
+        playerTriggerDetector = FindObjectOfType<PlayerTriggerDetector>();
         Player = GameObject.Find("Joueur");
         
         Speed_boulet = 5.0f;
@@ -38,11 +41,11 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
 
-        gameObject.transform.LookAt(Player.transform.position + Vector3.up * 2.0f);
+        Vector3 offset = Vector3.up * 1.5f;
+        gameObject.transform.LookAt(Player.transform.position + offset);
         var move = Speed_boulet * Time.deltaTime;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position, move);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position + offset, move);
 
 
         Destroy(gameObject, 20.0f);
@@ -58,6 +61,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
             IsPlayerInRange = true;
             Timer = 0;
             Destroy(gameObject);
+            playerTriggerDetector.LoseHealth(10);
 
         }
 

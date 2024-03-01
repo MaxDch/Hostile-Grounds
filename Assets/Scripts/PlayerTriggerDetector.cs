@@ -16,6 +16,9 @@ public class PlayerTriggerDetector : MonoBehaviour
 
     [SerializeField] ParticleSystem damageParticle;
 
+
+    float currentLavaDamageCooldown;
+
     float DistanceBetweenPlayer = 5.0f;
 
     Vector3 startPosition;
@@ -36,19 +39,14 @@ public class PlayerTriggerDetector : MonoBehaviour
 
     void Update()
     {
-        if (isInGameOver == false)
+        if (isOnLava && currentLavaDamageCooldown <= 0)
         {
-            if (isOnLava)
-            {
-                gamemanager.Health = Mathf.Max(gamemanager.Health - lavaDamage, 0);
-                damageParticle.Play();
-                uIManager.PlayerHealth.text = gamemanager.Health.ToString();
-                if (gamemanager.Health <= 0)
-                {
-                    StartCoroutine(GameOverRoutine());
-                }
-                // TODO : redonner health au respawn + fonction commune de lose health
-            }
+            LoseHealth(lavaDamage);
+            currentLavaDamageCooldown = lavaDamageCooldown;
+        }
+        else if(currentLavaDamageCooldown > 0)
+        {
+            currentLavaDamageCooldown -= Time.deltaTime;
         }
     }
 
@@ -68,7 +66,6 @@ public class PlayerTriggerDetector : MonoBehaviour
         gameObject.SetActive(true);
         Time.timeScale = 1;
         isOnLava = false;
-        isInGameOver = false;
         thirdPersonController.enabled = false;
         StartCoroutine(ReplayAfterDelay());
     }
@@ -77,17 +74,17 @@ public class PlayerTriggerDetector : MonoBehaviour
     {
         yield return new WaitForSeconds(gameOverPostDelay);
         uIManager.EndGameOver();
+        gamemanager.Health = 100;
         yield return new WaitForSeconds(endGameOverDuration);
         thirdPersonController.enabled = true;
+        isInGameOver = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Projectile") && other.TryGetComponent<Ctrl_Boulet_Pilier>(out var projectile))
         {
-            gamemanager.Health = gamemanager.Health - 10;
-            damageParticle.Play();
-            GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
+            LoseHealth(10);
             projectile.Explode();
         }
         if (other.CompareTag("Lava"))
@@ -101,11 +98,7 @@ public class PlayerTriggerDetector : MonoBehaviour
             float sqrLen = Bouclier.sqrMagnitude;
             if (sqrLen <= DistanceBetweenPlayer * DistanceBetweenPlayer)
             {
-                gamemanager.Health = gamemanager.Health - 10;
-                GameObject.Find("ValeurHealth").GetComponent<Text>().text = gamemanager.Health.ToString();
-                damageParticle.Play();
-                print("Je prends des dégâts");
-
+                LoseHealth(10);
             }
         }
         if (other.TryGetComponent<BossControl>(out var bossControl))
@@ -126,9 +119,29 @@ public class PlayerTriggerDetector : MonoBehaviour
         }
     }
 
-    void LoseHealth(int losedHealth)
+    public bool LoseHealth(int losedHealth)
     {
-        losedHealth
+        if (isInGameOver == false)
+        {
+            gamemanager.Health = Mathf.Max(gamemanager.Health - losedHealth, 0);
+            damageParticle.Play();
+            if(uIManager == null)
+            {
+                Debug.LogError("UI Manager is null");
+            }
+            else if(uIManager.PlayerHealth == null)
+            {
+                Debug.LogError("PlayerHealth is null");
+            }
+            uIManager.PlayerHealth.text = gamemanager.Health.ToString();
+
+            if (gamemanager.Health <= 0)
+            {
+                StartCoroutine(GameOverRoutine());
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnTriggerExit(Collider other)
