@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class FollowTwoObjectAxis : MonoBehaviour
     [SerializeField] Transform FollowObject_1;
     [SerializeField] Transform FollowObject_2;
 
+    [SerializeField] bool assignPlayerToFollowObject2;
+
     public float moveSmoothTime;
     public float rotateSmoothTime;
 
@@ -14,7 +17,10 @@ public class FollowTwoObjectAxis : MonoBehaviour
     Vector3 rotateVelocity;
     void Start()
     {
-        
+        if(assignPlayerToFollowObject2)
+        {
+            FollowObject_2 = FindObjectOfType<ThirdPersonController>().transform;
+        }
     }
 
     // Update is called once per frame

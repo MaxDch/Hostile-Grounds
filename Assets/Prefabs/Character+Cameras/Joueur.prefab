@@ -2042,7 +2042,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa65e2bf1a8c854db10f45f35201309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BouclierBoss: {fileID: 0}
+  lavaDamage: 20
+  lavaDamageCooldown: 1
+  gameOverDuration: 2
+  gameOverPostDelay: 1
+  endGameOverDuration: 0.5
+  thirdPersonController: {fileID: 8392546239840364960}
 --- !u!1 &6703748991630910329
 GameObject:
   m_ObjectHideFlags: 0

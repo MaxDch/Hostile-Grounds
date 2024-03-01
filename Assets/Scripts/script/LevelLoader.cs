@@ -9,10 +9,12 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
+#if !UNITY_EDITOR
         foreach(int scenesIndexes in _scenesIndexesToLoad)
         {
             SceneManager.LoadScene(scenesIndexes, LoadSceneMode.Additive);
         }
+#endif
     }
 
     // Update is called once per frame
