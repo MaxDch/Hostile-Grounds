@@ -12,6 +12,9 @@ TagManager:
   - ShieldBoss
   - PlayerHealth
   - BossHeart
+  - Minion_Boss
+  - Projectile_Minion
+  - Pompe_Boss
   layers:
   - Default
   - TransparentFX

@@ -101,6 +101,7 @@ public class PlayerTriggerDetector : MonoBehaviour
                 LoseHealth(10);
             }
         }
+        
         if (other.TryGetComponent<BossControl>(out var bossControl))
         {
             bossControl.SwapBossCameraActivation(true);
@@ -153,6 +154,15 @@ public class PlayerTriggerDetector : MonoBehaviour
         if (other.CompareTag("Lava"))
         {
             isOnLava = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Projectile_Minion")
+        {
+            LoseHealth(10);
+            Destroy(collision.collider.gameObject);
         }
     }
 

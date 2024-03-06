@@ -11,7 +11,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     public GameObject FxBoulet;
     float direction;
     float Speed_boulet;
-    GameObject Player;
+    Transform Player;
     Transform Target;
 
     PlayerTriggerDetector playerTriggerDetector;
@@ -19,7 +19,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     void Start()
     {
         playerTriggerDetector = FindObjectOfType<PlayerTriggerDetector>();
-        Player = GameObject.Find("Joueur");
+        Player = GameObject.FindWithTag("Player").transform; 
         
         Speed_boulet = 5.0f;
         Target = Player.transform; 
@@ -66,6 +66,12 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
         }
 
         if(collision.collider.CompareTag("BossHeart"))
+        {
+            Destroy(gameObject);
+            Timer = 0;
+        }
+
+        if(collision.collider.tag == "Minion_Boss")
         {
             Destroy(gameObject);
             Timer = 0;

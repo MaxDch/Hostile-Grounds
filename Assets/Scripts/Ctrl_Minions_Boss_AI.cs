@@ -79,8 +79,8 @@ public class Ctrl_Minions_Boss_AI : MonoBehaviour
     {
         //Make sure ennemy doesn't move
         Minion.SetDestination(transform.position);
-        Vector3 offset = Vector3.up * 1.5f;
-        transform.LookAt(Player.transform.position + offset);
+        
+        transform.LookAt(Player.transform.position);
 
         if(!AlreadyAttacked) 
         {

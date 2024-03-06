@@ -17,11 +17,11 @@ public class BossControl : MonoBehaviour
     public GameObject bossCamera;
 
     float currentDistance;
-    float AttackZone;
+    public float AttackZone;
     void Start()
     {
         uIManager = FindObjectOfType<UIManager>();
-        AttackZone = 30.0f;
+        AttackZone = 20.0f;
         Timer = 0;
         foreach (var charController in FindObjectsOfType<CharacterController>())
         {
@@ -69,5 +69,11 @@ public class BossControl : MonoBehaviour
     internal void SwapBossCameraActivation(bool b)
     {
         bossCamera.SetActive(b);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, AttackZone);
     }
 }

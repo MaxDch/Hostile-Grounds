@@ -3518,6 +3518,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8392546239840364960, guid: 7005496ee118afe478314af620f8a4f3,
+        type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 513
+      objectReference: {fileID: 0}
     - target: {fileID: 8393264339551390434, guid: 7005496ee118afe478314af620f8a4f3,
         type: 3}
       propertyPath: m_LocalPosition.x
