@@ -85,6 +85,7 @@ public class Ctrl_Minions_Boss_AI : MonoBehaviour
         if(!AlreadyAttacked) 
         {
             Rigidbody rb = Instantiate(MinionProjectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.GetComponent<Projectile>().SetSpawner(gameObject);
             rb.AddForce(transform.forward * 15.0f, ForceMode.Impulse);
             rb.AddForce(transform.up * 5.0f, ForceMode.Impulse);
             AlreadyAttacked = true;

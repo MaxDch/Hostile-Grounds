@@ -30,6 +30,10 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        if (collision.isTrigger)
+        {
+            return;
+        }
         if (HasHitSpawner(collision.gameObject))
         {
             return;

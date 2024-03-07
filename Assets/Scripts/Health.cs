@@ -26,10 +26,16 @@ public class Health : MonoBehaviour
         _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
         if(IsDead())
         {
-            _onDeath.Invoke();
+            if (_onDeath != null)
+            {
+                _onDeath.Invoke();
+            }
         }
 
-        _onHealthChanged.Invoke();
+        if (_onHealthChanged != null)
+        {
+            _onHealthChanged.Invoke();
+        }
     }
 
     public void Heal(float damage)
@@ -41,7 +47,10 @@ public class Health : MonoBehaviour
 
         _currentHealth = Mathf.Clamp(_currentHealth + damage, 0, _maxHealth);
 
-        _onHealthChanged.Invoke();
+        if (_onHealthChanged != null)
+        {
+            _onHealthChanged.Invoke();
+        }
     }
 
     public bool IsDead()

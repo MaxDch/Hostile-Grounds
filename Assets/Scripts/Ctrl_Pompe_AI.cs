@@ -5,12 +5,11 @@ using UnityEngine.AI;
 
 public class Ctrl_Pompe_AI : MonoBehaviour
 {
-    public NavMeshAgent Minion;
+    public GameObject Minion;
     public GameObject SpawnPoint;
     
     void Start()
     {
-        Minion = GetComponent<NavMeshAgent>();
         
     }
 
