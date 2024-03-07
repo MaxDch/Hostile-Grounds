@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ctrl_Projectile_Minion : MonoBehaviour
 {
-    public LayerMask whatIsGround, whatIsWall, whatIsBoss;
+    
     void Start()
     {
         
