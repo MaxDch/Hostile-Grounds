@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 231856120}
   m_Layer: 10
   m_Name: "D\xE9cors"
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 274034927}
   m_Layer: 9
   m_Name: Sol_Zone_3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -703,6 +703,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 3559446277662615924, guid: 8ba84b39001b5044c9142261ed295b93,
+        type: 3}
+      propertyPath: m_TagString
+      value: BOSS
+      objectReference: {fileID: 0}
     - target: {fileID: 3821055472280683429, guid: 8ba84b39001b5044c9142261ed295b93,
         type: 3}
       propertyPath: m_Layer
@@ -857,7 +862,7 @@ GameObject:
   - component: {fileID: 286417108}
   m_Layer: 10
   m_Name: MUR_1
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,7 +967,7 @@ GameObject:
   - component: {fileID: 302016247}
   m_Layer: 10
   m_Name: MUR
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1073,7 +1078,7 @@ GameObject:
   - component: {fileID: 527746724}
   m_Layer: 10
   m_Name: MUR_3
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1593,7 +1598,7 @@ GameObject:
   - component: {fileID: 693415600}
   m_Layer: 10
   m_Name: MUR_2
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3136,7 +3141,7 @@ GameObject:
   - component: {fileID: 1769769087}
   m_Layer: 10
   m_Name: MUR_4
-  m_TagString: Untagged
+  m_TagString: WALL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3877,11 +3882,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650133741818893339, guid: e0d7d5359eff69e4484086aa2bd7fca3,
         type: 3}
-      propertyPath: m_TagString
-      value: Pompe_Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 3650133741818893339, guid: e0d7d5359eff69e4484086aa2bd7fca3,
-        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -3929,11 +3929,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672289416730982762, guid: e0d7d5359eff69e4484086aa2bd7fca3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Pompe_Boss
       objectReference: {fileID: 0}
     - target: {fileID: 4672289416730982762, guid: e0d7d5359eff69e4484086aa2bd7fca3,
         type: 3}

@@ -767,8 +767,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8067356974794000097, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
         type: 3}
+      propertyPath: m_UpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067356974794000097, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
+        type: 3}
       propertyPath: m_ShowDebugText
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067356974794000097, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
+        type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

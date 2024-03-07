@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Ctrl_Pompes : MonoBehaviour
 {
-    public int Health;
+    public int Health = 100;
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100;
     }
 
     // Update is called once per frame

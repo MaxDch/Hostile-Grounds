@@ -15,6 +15,9 @@ TagManager:
   - Minion_Boss
   - Projectile_Minion
   - Pompe_Boss
+  - BOSS
+  - WALL
+  - Ground
   layers:
   - Default
   - TransparentFX

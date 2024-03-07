@@ -22,9 +22,8 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
         Player = GameObject.FindWithTag("Player").transform; 
         
         Speed_boulet = 5.0f;
-        Target = Player.transform; 
-        Target.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
-        
+        Target = Player.transform;
+        Destroy(gameObject, 20.0f);
     }
 
     // Update is called once per frame
@@ -43,12 +42,12 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     {
 
         Vector3 offset = Vector3.up * 1.5f;
-        gameObject.transform.LookAt(Player.transform.position + offset);
+        gameObject.transform.LookAt(Target.transform.position + offset);
         var move = Speed_boulet * Time.deltaTime;
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position + offset, move);
 
 
-        Destroy(gameObject, 20.0f);
+        
     }
     
    

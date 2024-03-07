@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ctrl_Projectile_Minion : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public LayerMask whatIsGround, whatIsWall, whatIsBoss;
     void Start()
     {
         
@@ -22,6 +22,22 @@ public class Ctrl_Projectile_Minion : MonoBehaviour
             Destroy(gameObject);
         
         
+        }
+
+        if(collision.collider.tag == "Ground") 
+        {
+            Destroy(gameObject);
+        
+        }
+        if (collision.collider.tag == "BOSS")
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.collider.tag == "WALL")
+        {
+            Destroy(gameObject);
+
         }
     }
 }
