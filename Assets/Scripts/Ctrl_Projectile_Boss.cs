@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
         
         Speed_boulet = 5.0f;
         Target = Player.transform;
-        Destroy(gameObject, 20.0f);
+        Destroy(gameObject, 50.0f);
     }
 
     // Update is called once per frame
@@ -40,41 +41,16 @@ public class Ctrl_Projectile_Boss : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(playerTriggerDetector.GetComponent<Health>().IsDead())
+        {
+            Destroy(gameObject);
+        }
 
         Vector3 offset = Vector3.up * 1.5f;
         gameObject.transform.LookAt(Target.transform.position + offset);
         var move = Speed_boulet * Time.deltaTime;
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position + offset, move);
-
-
         
-    }
-    
-   
-    private void OnCollisionEnter(Collision collision)
-    {
-
-       
-        if (collision.collider.CompareTag ("Player"))
-        {
-            IsPlayerInRange = true;
-            Timer = 0;
-            Destroy(gameObject);
-            playerTriggerDetector.LoseHealth(10);
-
-        }
-
-        if(collision.collider.CompareTag("BossHeart"))
-        {
-            Destroy(gameObject);
-            Timer = 0;
-        }
-
-        if(collision.collider.tag == "Minion_Boss")
-        {
-            Destroy(gameObject);
-            Timer = 0;
-        }
     }
 }
 

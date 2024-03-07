@@ -8,13 +8,17 @@ public class BossControl : MonoBehaviour
 {
     bool IsPlayerInRange;
     public GameObject Projectile;
+    public GameObject bossCamera;
     GameObject Player;
     public GameObject Boss;
     public float Timer;
     public GameObject ZoneEnvoiProjectile;
     UIManager uIManager;
 
-    public GameObject bossCamera;
+    public Health[] _pumps;
+    public GameObject[] _objectToHideByPumpDeath;
+
+    List<GameObject> StockAmmos = new List<GameObject>();
 
     float currentDistance;
     public float AttackZone;
@@ -32,30 +36,36 @@ public class BossControl : MonoBehaviour
             }
 
         }
+
+        foreach(Health health in _pumps)
+        {
+            health._onDeath += OnPumpDeath;
+        }
     }
     
-    void Update()
-    {
-        
-    }
     private void FixedUpdate()
     {
+        for(int i = StockAmmos.Count - 1; i >= 0; --i)
+        {
+            if (StockAmmos[i] == null)
+            {
+                StockAmmos.RemoveAt(i);
+            }
+        }
+
         currentDistance = Vector3.Distance(Boss.transform.position, Player.transform.position);
-        
-        int[] StockAmmos = new int[10];
 
         if (currentDistance <= AttackZone)
         {
             Timer = Timer + Time.deltaTime;
 
-            if (Timer >= 2.0f)
+            if (Timer >= 2.0f && StockAmmos.Count < 10)
             {
-
                 GameObject BouletBoss = Instantiate(Projectile, ZoneEnvoiProjectile.transform.position, Quaternion.identity);
-                BouletBoss.GetComponent<Rigidbody>().AddForce(ZoneEnvoiProjectile.transform.forward * 10.0f, ForceMode.Force);
+                BouletBoss.GetComponent<Projectile>().SetSpawner(gameObject);
                 ZoneEnvoiProjectile.transform.LookAt(Player.transform);
-                foreach (int i in StockAmmos)
-                { StockAmmos[i] = i - 1; }
+
+                StockAmmos.Add(BouletBoss);
                 
                 Timer = 0;
 
@@ -66,14 +76,31 @@ public class BossControl : MonoBehaviour
         }
     }
 
-    internal void SwapBossCameraActivation(bool b)
-    {
-        bossCamera.SetActive(b);
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackZone);
+    }
+
+    void OnPumpDeath()
+    {
+        int numberOfPumpDead = 0;
+
+        foreach (Health health in _pumps)
+        {
+           if(health.IsDead())
+            {
+                numberOfPumpDead++;
+            }
+        }
+
+        for(int i = 0; i < numberOfPumpDead; ++i)
+        {
+            if(_objectToHideByPumpDeath.Length <= i)
+            {
+                return;
+            }
+            _objectToHideByPumpDeath[i].SetActive(false);
+        }
     }
 }

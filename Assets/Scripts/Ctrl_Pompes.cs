@@ -4,29 +4,15 @@ using UnityEngine;
 
 public class Ctrl_Pompes : MonoBehaviour
 {
-    public int Health = 100;
-    // Start is called before the first frame update
+    Health _health;
     void Start()
     {
+        _health = GetComponent<Health>();
+        _health._onHealthChanged += OnReceiveDamage;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnReceiveDamage()
     {
-        
-    }
-    public void TakeDamage(int Damage)
-    {
-        Health -= Damage;
-
-        if (Health < 0) Destroy(gameObject);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.collider.tag == "Projectile_Minion")
-        {
-            TakeDamage(10);
-        }
+        //_health._currentHealth 
     }
 }

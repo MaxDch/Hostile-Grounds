@@ -7,26 +7,15 @@ public class ZonePiegePilier : MonoBehaviour
 {
     [SerializeField] float attackDelay;
 
-    PlayerTriggerDetector playerTriggerDetector;
-
-    bool isPlayerInTrigger;
+    Health _health;
 
     float currentAttackDelay;
 
-    void Start()
-    {
-        playerTriggerDetector = FindObjectOfType<PlayerTriggerDetector>();
-    }
-
     void Update()
     {
-        if(currentAttackDelay <= 0 && isPlayerInTrigger)
+        if(currentAttackDelay <= 0 && _health != null)
         {
-            bool isDead = playerTriggerDetector.LoseHealth(10);
-            if(isDead)
-            {
-                isPlayerInTrigger = false;
-            }
+            _health.Damage(10);
             currentAttackDelay = attackDelay;
         }
         else if(currentAttackDelay > 0)
@@ -38,8 +27,8 @@ public class ZonePiegePilier : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInTrigger = true;
             currentAttackDelay = attackDelay;
+            _health = other.GetComponent<Health>();
         }
     }
 
@@ -47,7 +36,12 @@ public class ZonePiegePilier : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerInTrigger = false;
+            _health = null;
         }
+    }
+
+    private void OnDisable()
+    {
+        _health = null;
     }
 }

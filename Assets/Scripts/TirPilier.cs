@@ -5,22 +5,12 @@ public class TirPilier : MonoBehaviour
     public float Timer;
     public GameObject Projectile;
     public GameObject ZoneTir;
-    GameObject Player;
-    bool IsPlayerInRange;
+    Health _health = null;
 
 
     void Start()
     {
         Timer = 0;
-        foreach (var charController in FindObjectsOfType<CharacterController>())
-        {
-            if (charController.gameObject.CompareTag("Player"))
-            {
-                Player = charController.gameObject;
-                break;
-            }
-        }
-
     }
 
     // Update is called once per frame
@@ -33,10 +23,11 @@ public class TirPilier : MonoBehaviour
     private void FixedUpdate()
     {
         Timer = Timer + Time.deltaTime;
-        if (Timer > 2.0 && IsPlayerInRange)
+        if (Timer > 2.0 && _health != null)
         {
             GameObject BouletPilier = Instantiate(Projectile, ZoneTir.transform.position, Quaternion.identity);
-            ZoneTir.transform.LookAt(Player.transform.position + Vector3.up * 1.5f);
+            BouletPilier.GetComponent<Projectile>().SetSpawner(gameObject);
+            ZoneTir.transform.LookAt(_health.transform.position + Vector3.up * 1.5f);
             BouletPilier.GetComponent<Rigidbody>().AddForce(ZoneTir.transform.forward * 20.0f, ForceMode.Impulse);
             Timer = 0;
 
@@ -48,24 +39,15 @@ public class TirPilier : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            IsPlayerInRange = true;
+            _health = other.GetComponent<Health>();
             Timer = 0;
-
-            print("le joueur entre dans la zone");
-
-
         }
     }
     private void OnTriggerExit(Collider other)
     {
-
         if (other.tag == "Player")
         {
-            IsPlayerInRange = false;
-
-
-
-
+            _health = null;
         }
     }
 

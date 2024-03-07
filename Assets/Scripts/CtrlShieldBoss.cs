@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class CtrlShieldBoss : MonoBehaviour
 {
-    public float AttackZone;
+    public float AttackZone = 3.0f;
     public float DamageCooldown;
 
-    GameObject Player;
+    Health Player;
     public GameObject Shield;
 
     float currentDamageCooldown;
@@ -20,9 +20,7 @@ public class CtrlShieldBoss : MonoBehaviour
     void Start()
     {
         uIManager = FindObjectOfType<UIManager>();
-        Player = GameObject.FindWithTag("Player");
-
-        AttackZone = 3.0f;
+        Player = GameObject.FindWithTag("Player").GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -37,15 +35,12 @@ public class CtrlShieldBoss : MonoBehaviour
             if (currentDamageCooldown > DamageCooldown)
             {
                 currentDamageCooldown = 0;
-                gamemanager.Health = gamemanager.Health - 1;
-                uIManager.PlayerHealth.text = gamemanager.Health.ToString();
-                print("Je prends des dégâts");
+                Player.Damage(1);
             }
         }
         else
         {
             playerNearSign.SetActive(false);
-            //currentDamageCooldown = 0;
         }
     }
 

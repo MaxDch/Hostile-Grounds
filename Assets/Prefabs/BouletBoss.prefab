@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8698957590055304912}
   - component: {fileID: 6320728322579775682}
   - component: {fileID: 767731658647974362}
-  - component: {fileID: 2676765753717079778}
   - component: {fileID: -6687886004711394943}
-  - component: {fileID: 8404674725055931395}
+  - component: {fileID: -8054205714000663103}
+  - component: {fileID: 1436002810068920782}
+  - component: {fileID: 5340967420450425674}
   m_Layer: 0
   m_Name: BouletBoss
   m_TagString: Projectile
@@ -108,7 +109,57 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2676765753717079778
+--- !u!114 &-6687886004711394943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705093386931117623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c34c66b68ea8b40abcfd1c481840c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
+  Boulet: {fileID: 4705093386931117623}
+  FxBoulet: {fileID: 0}
+--- !u!114 &-8054205714000663103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705093386931117623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3be3cfa6f61ff48a2a675ee58076ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageOnImpact: 10
+  _shouldDieOnAnyImpact: 0
+--- !u!135 &1436002810068920782
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705093386931117623}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5340967420450425674
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,39 +186,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6687886004711394943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705093386931117623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c34c66b68ea8b40abcfd1c481840c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: 0
-  Boulet: {fileID: 4705093386931117623}
-  FxBoulet: {fileID: 0}
---- !u!135 &8404674725055931395
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705093386931117623}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.88
-  m_Center: {x: 0, y: 0, z: 0}

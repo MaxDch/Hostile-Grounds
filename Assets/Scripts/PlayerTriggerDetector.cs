@@ -1,3 +1,4 @@
+using Cinemachine;
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ public class PlayerTriggerDetector : MonoBehaviour
     [SerializeField] float gameOverPostDelay;
     [SerializeField] float endGameOverDuration;
     [SerializeField] ThirdPersonController thirdPersonController;
+    [SerializeField] GameObject bossCamera;
+    Health _health;
 
     [SerializeField] ParticleSystem damageParticle;
 
@@ -35,13 +38,23 @@ public class PlayerTriggerDetector : MonoBehaviour
     {
         startPosition = transform.position;
         uIManager = FindObjectOfType<UIManager>();
+
+        _health = thirdPersonController.GetComponent<Health>();
+        _health._onDeath += StartCoroutineGameOver;
+
+        bossCamera = null;
+    }
+
+    private void StartCoroutineGameOver()
+    {
+        StartCoroutine(GameOverRoutine());
     }
 
     void Update()
     {
         if (isOnLava && currentLavaDamageCooldown <= 0)
         {
-            LoseHealth(lavaDamage);
+            _health.Damage(lavaDamage);
             currentLavaDamageCooldown = lavaDamageCooldown;
         }
         else if(currentLavaDamageCooldown > 0)
@@ -52,7 +65,6 @@ public class PlayerTriggerDetector : MonoBehaviour
 
     IEnumerator GameOverRoutine()
     {
-        uIManager.PlayGameOver();
         isInGameOver = true;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(gameOverDuration);
@@ -61,6 +73,11 @@ public class PlayerTriggerDetector : MonoBehaviour
 
     void Respawn()
     {
+        if (bossCamera != null)
+        {
+            bossCamera.SetActive(false);
+        }
+        _health.Respawn();
         gameObject.SetActive(false);
         transform.position = currentCheckpoint != null ? currentCheckpoint.transform.position : startPosition;
         gameObject.SetActive(true);
@@ -74,7 +91,7 @@ public class PlayerTriggerDetector : MonoBehaviour
     {
         yield return new WaitForSeconds(gameOverPostDelay);
         uIManager.EndGameOver();
-        gamemanager.Health = 100;
+
         yield return new WaitForSeconds(endGameOverDuration);
         thirdPersonController.enabled = true;
         isInGameOver = false;
@@ -82,11 +99,6 @@ public class PlayerTriggerDetector : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Projectile") && other.TryGetComponent<Ctrl_Boulet_Pilier>(out var projectile))
-        {
-            LoseHealth(10);
-            projectile.Explode();
-        }
         if (other.CompareTag("Lava"))
         {
             isOnLava = true;
@@ -98,13 +110,14 @@ public class PlayerTriggerDetector : MonoBehaviour
             float sqrLen = Bouclier.sqrMagnitude;
             if (sqrLen <= DistanceBetweenPlayer * DistanceBetweenPlayer)
             {
-                LoseHealth(10);
+                _health.Damage(10);
             }
         }
         
         if (other.TryGetComponent<BossControl>(out var bossControl))
         {
-            bossControl.SwapBossCameraActivation(true);
+            bossCamera = bossControl.bossCamera;
+            bossCamera.SetActive(true);
         }
         if (other.TryGetComponent<Checkpoint>(out var checkpoint))
         {
@@ -120,49 +133,15 @@ public class PlayerTriggerDetector : MonoBehaviour
         }
     }
 
-    public bool LoseHealth(int losedHealth)
-    {
-        if (isInGameOver == false)
-        {
-            gamemanager.Health = Mathf.Max(gamemanager.Health - losedHealth, 0);
-            damageParticle.Play();
-            if(uIManager == null)
-            {
-                Debug.LogError("UI Manager is null");
-            }
-            else if(uIManager.PlayerHealth == null)
-            {
-                Debug.LogError("PlayerHealth is null");
-            }
-            uIManager.PlayerHealth.text = gamemanager.Health.ToString();
-
-            if (gamemanager.Health <= 0)
-            {
-                StartCoroutine(GameOverRoutine());
-                return true;
-            }
-        }
-        return false;
-    }
-
     void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<BossControl>(out var bossControl))
         {
-            bossControl.SwapBossCameraActivation(false);
+            bossCamera.SetActive(false);
         }
         if (other.CompareTag("Lava"))
         {
             isOnLava = false;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Projectile_Minion")
-        {
-            LoseHealth(10);
-            Destroy(collision.collider.gameObject);
         }
     }
 

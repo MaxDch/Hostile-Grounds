@@ -18,6 +18,7 @@ TagManager:
   - BOSS
   - WALL
   - Ground
+  - BossCam
   layers:
   - Default
   - TransparentFX

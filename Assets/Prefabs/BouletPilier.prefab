@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8698957590055304912}
   - component: {fileID: 6320728322579775682}
   - component: {fileID: 767731658647974362}
-  - component: {fileID: 2676765753717079778}
-  - component: {fileID: -6560776171351413813}
-  - component: {fileID: 5122781301006145967}
+  - component: {fileID: 4188093785017556871}
+  - component: {fileID: 131876680308455064}
+  - component: {fileID: -3337411917671721173}
   m_Layer: 0
   m_Name: BouletPilier
   m_TagString: Projectile
@@ -108,7 +108,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2676765753717079778
+--- !u!114 &4188093785017556871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705093386931117623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3be3cfa6f61ff48a2a675ee58076ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageOnImpact: 10
+  _shouldDieOnAnyImpact: 1
+--- !u!54 &131876680308455064
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,27 +144,12 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6560776171351413813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705093386931117623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bbbb4de33407c74f9e46f8f47d3e356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: 0
-  Boulet: {fileID: 4705093386931117623}
-  FxBoulet: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
---- !u!135 &5122781301006145967
+--- !u!135 &-3337411917671721173
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,5 +168,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.66
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
