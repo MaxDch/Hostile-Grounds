@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_zone3.unity
     guid: 6cdf65f5e2d561e4bab75e3786f21e23
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: fe3a8c898093bbd48ad1c32b320c3c2d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5ee109efe44b4394399a4ebd19e00629,
       type: 2}

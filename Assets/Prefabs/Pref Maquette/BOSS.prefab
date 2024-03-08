@@ -49,10 +49,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 4705093386931117623, guid: 56023f023c66fdb4fb9caef9b34db041,
     type: 3}
+  bossCamera: {fileID: 0}
   Boss: {fileID: 3559446277662615924}
   Timer: 0
   ZoneEnvoiProjectile: {fileID: 5732346660646731305}
-  bossCamera: {fileID: 0}
+  _pumps: []
+  _objectToHideByPumpDeath: []
+  AttackZone: 0
 --- !u!65 &8816761716580361913
 BoxCollider:
   m_ObjectHideFlags: 0

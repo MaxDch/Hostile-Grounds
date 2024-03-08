@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossControl : MonoBehaviour
 {
@@ -101,6 +102,11 @@ public class BossControl : MonoBehaviour
                 return;
             }
             _objectToHideByPumpDeath[i].SetActive(false);
+            if(numberOfPumpDead == 3)
+            {
+                SceneManager.LoadScene("EndGame");
+            }
         }
+        
     }
 }
