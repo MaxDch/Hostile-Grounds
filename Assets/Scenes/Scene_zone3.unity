@@ -513,6 +513,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &171425737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171425740}
+  - component: {fileID: 171425739}
+  - component: {fileID: 171425738}
+  m_Layer: 0
+  m_Name: Box Volume_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &171425738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171425737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 17365050e00f03b43b5c41f9471a58a8, type: 2}
+--- !u!65 &171425739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171425737}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &171425740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171425737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.35, z: 272.5}
+  m_LocalScale: {x: 217.50401, y: 73.054115, z: 122.2999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &215560570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,7 +3205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930516657}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VIsual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3886,9 +3957,9 @@ GameObject:
   - component: {fileID: 1407158584}
   - component: {fileID: 1407158583}
   - component: {fileID: 1407158585}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BOSS_Bubons
-  m_TagString: Untagged
+  m_TagString: BOSS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3975,7 +4046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1470741664
 Light:
   m_ObjectHideFlags: 0
@@ -6337,7 +6408,7 @@ GameObject:
   - component: {fileID: 7531206392056491385}
   - component: {fileID: 2185741591723886817}
   - component: {fileID: 7531206392056491386}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6353,7 +6424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4260982690653407616}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6483,7 +6554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368544435233939075}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6499,7 +6570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368544434886256435}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6579,7 +6650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6537661294779803568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6681,7 +6752,7 @@ GameObject:
   - component: {fileID: 7846592359224376212}
   - component: {fileID: 695084153027694007}
   - component: {fileID: 7846592359224376213}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6699,7 +6770,7 @@ GameObject:
   - component: {fileID: 7846592358337708580}
   - component: {fileID: 695084152166773767}
   - component: {fileID: 7846592358337708581}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6946,7 +7017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6635190393776225448}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6964,7 +7035,7 @@ GameObject:
   - component: {fileID: 5471851981915900541}
   - component: {fileID: 4953659147017740920}
   - component: {fileID: 5471851981915900542}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6982,7 +7053,7 @@ GameObject:
   - component: {fileID: 5471851981574386637}
   - component: {fileID: 4953659146684865480}
   - component: {fileID: 5471851981574386638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7028,7 +7099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6271037589684146163}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7044,7 +7115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651765353605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bubon_Boss_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7066,7 +7137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652642301237}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bubon_BOSS_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7082,7 +7153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6776359403150299791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7294,7 +7365,7 @@ GameObject:
   - component: {fileID: 3612194948415144634}
   - component: {fileID: 1253713850011945123}
   - component: {fileID: 3612194948415144635}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7312,7 +7383,7 @@ GameObject:
   - component: {fileID: 3612194948610374410}
   - component: {fileID: 1253713849663385875}
   - component: {fileID: 3612194948610374411}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7330,7 +7401,7 @@ GameObject:
   - component: {fileID: 8987966555484418283}
   - component: {fileID: 6365956511344354812}
   - component: {fileID: 8987966555484418284}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7348,7 +7419,7 @@ GameObject:
   - component: {fileID: 8987966556350843227}
   - component: {fileID: 6365956512222583884}
   - component: {fileID: 8987966556350843228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7502,7 +7573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856890393564315064}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7518,7 +7589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856890393751913480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7534,7 +7605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7186865957888602857}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7550,7 +7621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7186865958094588761}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7583,7 +7654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4324910796204532967}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7617,7 +7688,7 @@ GameObject:
   - component: {fileID: 3686295468012536003}
   - component: {fileID: 621770304860248836}
   - component: {fileID: 3686295468012536004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7868,7 +7939,7 @@ GameObject:
   - component: {fileID: 7760213528109121549}
   - component: {fileID: 675972485191990190}
   - component: {fileID: 7760213528109121550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7886,7 +7957,7 @@ GameObject:
   - component: {fileID: 7760213527788222909}
   - component: {fileID: 675972485515117086}
   - component: {fileID: 7760213527788222910}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7904,7 +7975,7 @@ GameObject:
   - component: {fileID: 481865365029428577}
   - component: {fileID: 9198388863294051858}
   - component: {fileID: 9198388863294051859}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8019,7 +8090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440256576450721179}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8035,7 +8106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440256576655756331}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8051,7 +8122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5500300640872442860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8067,7 +8138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5500300641757647452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8083,7 +8154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594682157942184502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8099,7 +8170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594682158282924934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8218,7 +8289,7 @@ GameObject:
   - component: {fileID: 5259708242410338186}
   - component: {fileID: 7790660599015367325}
   - component: {fileID: 7790660599015367326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8234,7 +8305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4585190485914221273}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8284,7 +8355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6339229561586103688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8438,7 +8509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9167705659926252362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8469,7 +8540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8651812337276988557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8487,7 +8558,7 @@ GameObject:
   - component: {fileID: 535309344698763170}
   - component: {fileID: 4388036546685983845}
   - component: {fileID: 4388036546685983846}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8505,7 +8576,7 @@ GameObject:
   - component: {fileID: 535309345431813650}
   - component: {fileID: 4388036547555435989}
   - component: {fileID: 4388036547555435990}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8651,7 +8722,7 @@ GameObject:
   - component: {fileID: 3668879875312589312}
   - component: {fileID: 5468120769605112179}
   - component: {fileID: 5468120769605112180}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8669,7 +8740,7 @@ GameObject:
   - component: {fileID: 3668879875643106224}
   - component: {fileID: 5468120769817012419}
   - component: {fileID: 5468120769817012420}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8687,7 +8758,7 @@ GameObject:
   - component: {fileID: 6914228462975879020}
   - component: {fileID: 4405679686206422223}
   - component: {fileID: 6914228462975879021}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8790,7 +8861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110025294154993377}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8806,7 +8877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110025293270218577}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MOD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8960,7 +9031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910907640002533858}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9012,7 +9083,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7998365993776259281}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9028,7 +9099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7998365994643249505}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9063,7 +9134,7 @@ GameObject:
   - component: {fileID: 6683816278630618024}
   - component: {fileID: 3031141714389775920}
   - component: {fileID: 6683816278630618025}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9081,7 +9152,7 @@ GameObject:
   - component: {fileID: 6683816277747640856}
   - component: {fileID: 3031141714603364224}
   - component: {fileID: 6683816277747640857}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9097,7 +9168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7152459785777727634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9113,7 +9184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7152459785572659490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_sphere_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9129,7 +9200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3733253523435891684}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bubon_Boss_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9145,7 +9216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7660589743319832046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9161,7 +9232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7660589742442622046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9276,7 +9347,7 @@ GameObject:
   - component: {fileID: 460650408361870811}
   - component: {fileID: 2676124626953801666}
   - component: {fileID: 4310241336115898255}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9534,7 +9605,7 @@ GameObject:
   - component: {fileID: 6386426551121020229}
   - component: {fileID: 4458836770772349798}
   - component: {fileID: 6386426551121020230}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9634,7 +9705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7516923066617641929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9650,7 +9721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7516923066277970553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9668,7 +9739,7 @@ GameObject:
   - component: {fileID: 9199300786045046044}
   - component: {fileID: 8141234403938002201}
   - component: {fileID: 9199300786045046045}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9715,7 +9786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078677728905342175}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9839,7 +9910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5104297071107874277}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9870,7 +9941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5134062015432005328}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9886,7 +9957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5134062015630405472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9902,7 +9973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2676068520074942488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10103,7 +10174,7 @@ GameObject:
   - component: {fileID: 3620237514764792658}
   - component: {fileID: 4190900367730142150}
   - component: {fileID: 5213306981443030572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10157,7 +10228,7 @@ GameObject:
   - component: {fileID: 4218065446059614936}
   - component: {fileID: 8404538234018645332}
   - component: {fileID: 8404538234018645333}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10451,7 +10522,7 @@ GameObject:
   - component: {fileID: 5770891772773007580}
   - component: {fileID: 6068609715339349742}
   - component: {fileID: 6068609715339349743}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10469,7 +10540,7 @@ GameObject:
   - component: {fileID: 5770891772574267756}
   - component: {fileID: 6068609715679934302}
   - component: {fileID: 6068609715679934303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10521,7 +10592,7 @@ GameObject:
   - component: {fileID: 3295431795077151935}
   - component: {fileID: 3627856598629862885}
   - component: {fileID: 5612319671634984552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10560,7 +10631,7 @@ GameObject:
   - component: {fileID: 3295431794216043791}
   - component: {fileID: 3627856597897491541}
   - component: {fileID: 5612319672501405656}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10599,7 +10670,7 @@ GameObject:
   - component: {fileID: 3132300306949704877}
   - component: {fileID: 5985345268418892141}
   - component: {fileID: 5985345268418892142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10615,7 +10686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8361344741657320190}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10631,7 +10702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8361344742542271310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10647,7 +10718,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2460423256521889993}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10663,7 +10734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2460423255795147129}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10679,7 +10750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738473840311495080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10695,7 +10766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8089516940770539512}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10711,7 +10782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8089516940583669320}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10727,7 +10798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6247035883078685489}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11013,7 +11084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3319427785955152652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11029,7 +11100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3319427785087543996}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11045,7 +11116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432596177802305344}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: General_Bulle_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11281,7 +11352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8130204433545198142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11422,7 +11493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897544631869435357}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11492,7 +11563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2856422992346407313}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: General_Bulle_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11508,7 +11579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2856422992694450209}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: General_Bulle_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11799,7 +11870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4940975365954307311}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11815,7 +11886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4940975365212798303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12150,7 +12221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253928218644094841}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12166,7 +12237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1253928217782380233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12212,7 +12283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8321047934100836785}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12449,7 +12520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2926606728514087870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12465,7 +12536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2926606728852591118}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12481,7 +12552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8256096565871928116}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12497,7 +12568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8256096566755007108}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12532,7 +12603,7 @@ GameObject:
   - component: {fileID: 7229337658062929421}
   - component: {fileID: 6952888582522843199}
   - component: {fileID: 8665336428512245914}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12571,7 +12642,7 @@ GameObject:
   - component: {fileID: 1872986103367336558}
   - component: {fileID: 440556077215265588}
   - component: {fileID: 8766080961102250167}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12610,7 +12681,7 @@ GameObject:
   - component: {fileID: 2251163992682164860}
   - component: {fileID: 7446034574414557116}
   - component: {fileID: 8772843944472259321}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12649,7 +12720,7 @@ GameObject:
   - component: {fileID: 2251163992467114956}
   - component: {fileID: 7446034574219335180}
   - component: {fileID: 8772843945222460233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12686,7 +12757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4633326125055829039}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12702,7 +12773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1612494119474192296}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL_Orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12718,7 +12789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4501912128155981689}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12734,7 +12805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4501912127406993097}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle_jnt_skn6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12750,7 +12821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4901653613762054441}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Master_Bulle_Scale_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12766,7 +12837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7130457393093930464}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12782,7 +12853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7130457392897365072}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rotate_Mini_Bulles_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12800,7 +12871,7 @@ GameObject:
   - component: {fileID: 466190625887990835}
   - component: {fileID: 1039353635100257447}
   - component: {fileID: 8943291403262970187}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12839,7 +12910,7 @@ GameObject:
   - component: {fileID: 466190625011977603}
   - component: {fileID: 1039353635449214231}
   - component: {fileID: 8943291404005945595}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12950,7 +13021,7 @@ GameObject:
   - component: {fileID: 1066230635688254473}
   - component: {fileID: 4676845067480284037}
   - component: {fileID: 9050849925644728109}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12989,7 +13060,7 @@ GameObject:
   - component: {fileID: 1066230634936608185}
   - component: {fileID: 4676845067676959285}
   - component: {fileID: 9050849926387584669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bulle12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13159,6 +13230,7 @@ SphereCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 171425740}
   - {fileID: 1470741665}
   - {fileID: 274034930}
   - {fileID: 1349884933}
