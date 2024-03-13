@@ -6821,6 +6821,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.59999996, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6604091510360770779}
   - {fileID: 8925242838538050280}
   - {fileID: 2293763890491900211}
   - {fileID: 2939038216687219034}
@@ -6857,7 +6858,6 @@ Transform:
   - {fileID: 1584097632405081593}
   - {fileID: 1307975335266362437}
   - {fileID: 574051268397432353}
-  - {fileID: 6604091510360770779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5644606503100643115
