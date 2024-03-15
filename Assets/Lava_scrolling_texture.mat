@@ -56,7 +56,7 @@ Material:
     - _QueueOffset: 0
     - _ShellControl: 1
     m_Colors:
-    - _AnimationControl: {r: 0.04, g: 0, b: 0, a: 0}
+    - _AnimationControl: {r: 0.01, g: 0, b: 0, a: 0}
     - _LavaColor: {r: 7.717647, g: 0.6033508, b: 0, a: 1}
     - _TilingControl: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
