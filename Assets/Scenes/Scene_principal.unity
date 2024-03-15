@@ -844,6 +844,11 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6294544260717708005, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6670469209334670636, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
         type: 3}
       propertyPath: m_Name
@@ -867,6 +872,16 @@ PrefabInstance:
     - target: {fileID: 8067356974794000097, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
         type: 3}
       propertyPath: m_BlendUpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786300993615857985, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786300993615857985, guid: 8bf5c794e77195f4b82ac6d1fd485ca9,
+        type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4247,6 +4262,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392546239840364960, guid: 7005496ee118afe478314af620f8a4f3,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392546239840364960, guid: 7005496ee118afe478314af620f8a4f3,
+        type: 3}
+      propertyPath: JumpHeight
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8392546239840364960, guid: 7005496ee118afe478314af620f8a4f3,
         type: 3}
